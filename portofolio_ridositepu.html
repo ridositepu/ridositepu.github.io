@@ -1,0 +1,198 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rido Sitepu — Web Developer & Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0f1724; --card:#0b1220; --muted:#9aa5b1; --accent:#7c5cff; --glass: rgba(255,255,255,0.03); --text:#e6eef8; }
+    [data-theme="light"]{ --bg:#ffffff; --card:#fbfbfd; --muted:#576071; --accent:#3366ff; --glass: rgba(0,0,0,0.03); --text:#0b1220; }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+    .container{max-width:980px;margin:28px auto;padding:20px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4bc0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.35)}
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px;margin-top:4px}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px}
+    nav a:hover{color:var(--text);background:var(--glass)}
+
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:26px;align-items:center}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+    .lead{font-size:18px;margin:0 0 10px 0}
+    .value{color:var(--muted);margin-bottom:14px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .skill{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    section{margin-top:20px}
+    h2{margin:0 0 12px 0;font-size:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03);opacity:0;transform:translateY(18px);transition:all 600ms cubic-bezier(.2,.9,.3,1)}
+    .project.visible{opacity:1;transform:translateY(0)}
+
+    .mock{height:140px;border-radius:8px;background:linear-gradient(135deg,#091627, #111827);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+    .meta{font-size:13px;color:var(--muted);margin-top:8px}
+    footer{margin:30px 0 80px 0;color:var(--muted);font-size:13px}
+
+    /* WhatsApp floating button */
+    .wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:white;border-radius:14px;padding:12px 14px;box-shadow:0 10px 30px rgba(2,8,23,0.4);font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;z-index:999}
+    .wa small{font-size:12px;opacity:0.95}
+
+    /* Theme toggle */
+    .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer}
+
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.avatar{width:56px;height:56px}}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="top" data-theme="dark">
+    <header>
+      <div class="brand">
+        <div class="avatar">RS</div>
+        <div>
+          <h1>Rido Sitepu</h1>
+          <div class="sub">Web Developer & Designer — Modern UI / UX</div>
+        </div>
+      </div>
+      <div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#works">Works</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" id="themeToggle" title="Ganti tema">Toggle Theme</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <p class="lead">Halo 👋, saya <strong>Rido Sitepu</strong>, Web Developer & Designer yang fokus pada tampilan kekinian, modern, dan pengalaman pengguna (UX).</p>
+          <p class="value">Saya membangun website yang terlihat profesional, cepat, dan mudah digunakan — cocok untuk UKM, portfolio pribadi, dan landing page produk.</p>
+
+          <div class="cta">
+            <a class="btn" href="https://wa.me/6285657410957?text=Halo%20Rido Sitepu%2C%20saya%20tertarik%20dengan%20layanan%20web%20anda" target="_blank">Hubungi via WhatsApp (085657410957)</a>
+            <a class="btn ghost" href="#works">Lihat Contoh Karya</a>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="skills" aria-hidden="true">
+              <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">JavaScript</div>
+              <div class="skill">React</div><div class="skill">Figma</div><div class="skill">UX Design</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" style="display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center">
+          <div style="width:100%;text-align:center">
+            <strong>Availability</strong>
+            <div class="meta">Open to freelance & remote projects</div>
+          </div>
+          <div style="width:100%;display:flex;gap:8px;justify-content:center">
+            <a class="btn" href="#contact">Hire Me</a>
+            <a class="btn ghost" href="portfolio_rido_2025_.pdf">Download PDF</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="card" style="margin-top:18px">
+        <h2>About — Cerita Singkat</h2>
+        <p style="margin:0;color:var(--muted)">Saya memadukan keterampilan coding dan desain untuk membuat produk digital yang tidak hanya terlihat cantik tetapi juga mudah digunakan. Portofolio ini adalah langkah awal saya membangun karya yang terus berkembang.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Keahlian</h2>
+        <div class="grid">
+          <div class="card">
+            <h3 style="margin:0 0 8px 0">Teknis</h3>
+            <div class="meta">HTML · CSS · JavaScript · React · Next.js · Node.js · Git</div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px 0">Desain & UX</h3>
+            <div class="meta">Figma · Prototyping · Wireframing · User Research · Visual Design</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="works">
+        <h2>Contoh Proyek (Mockup / Template)</h2>
+        <p style="color:var(--muted)">Karena ini adalah portofolio awal, berikut adalah 3 case studies fiktif yang menunjukkan pendekatan desain & development saya — bisa diganti nanti dengan proyek nyata.</p>
+        <div class="grid" id="projectsGrid">
+          <article class="project card">
+            <div class="mock">Mockup: Landing — Cafe Modern</div>
+            <h3 style="margin-top:10px;margin-bottom:6px">Landing Page — Cafe Aroma</h3>
+            <div class="meta"><strong>Peran:</strong> Desain UI + Frontend | <strong>Fokus:</strong> Brand identity & konversi</div>
+            <p style="margin-top:8px;color:var(--muted)">Problem: Cafe ingin meningkatkan pemesanan online. Solusi: Landing page sederhana, CTA jelas, dan tampilan hangat.</p>
+          </article>
+
+          <article class="project card">
+            <div class="mock">Mockup: Web App — ToDo Modern</div>
+            <h3 style="margin-top:10px;margin-bottom:6px">Aplikasi ToDo — Taskly</h3>
+            <div class="meta"><strong>Peran:</strong> Frontend developer | <strong>Fokus:</strong> UX sederhana & performa</div>
+            <p style="margin-top:8px;color:var(--muted)">Problem: Pengguna butuh manajemen tugas mudah. Solusi: UI minimal, fitur tag & filter, responsive design.</p>
+          </article>
+
+          <article class="project card">
+            <div class="mock">Mockup: Dashboard — Analytics</div>
+            <h3 style="margin-top:10px;margin-bottom:6px">Dashboard — Simple Analytics</h3>
+            <div class="meta"><strong>Peran:</strong> UI + integrasi chart | <strong>Fokus:</strong> Visualisasi data</div>
+            <p style="margin-top:8px;color:var(--muted)">Problem: Menyajikan KPI yang mudah dimengerti. Solusi: Dashboard bersih, highlight metrik utama.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="card" style="margin-top:18px">
+        <h2>Kontak</h2>
+        <p class="meta">Siap bekerja sama pada proyek web & desain. Klik tombol WhatsApp untuk langsung mengirim pesan atau kirim email ke <a href="mailto:ridositepu65@gmail.com">ridositepu65@gmail.com</a>.</p>
+        <div style="margin-top:10px">
+          <a class="btn" href="https://wa.me/6285657410957?text=Halo%20Rido Sitepu%2C%20saya%20tertarik%20dengan%20layanan%20web%20anda" target="_blank">Hubungi via WhatsApp (085657410957)</a>
+          <a class="btn ghost" href="mailto:ridositepu65@gmail.com">Kirim Email</a>
+        </div>
+      </section>
+
+      <footer>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <div>© 2025 Rido Sitepu — Web Developer & Designer</div>
+          <div class="meta">Portofolio dibuat oleh Rido Sitepu. Template responsif & mudah dikustomisasi.</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <a class="wa" href="https://wa.me/6285657410957?text=Halo%20Rido Sitepu%2C%20saya%20tertarik%20dengan%20layanan%20web%20anda" target="_blank">
+    <div>
+      <div style="font-size:14px">Chat via WhatsApp</div>
+      <small>Klik untuk mulai</small>
+    </div>
+  </a>
+
+  <script>
+    // Theme toggle (persist)
+    (function() {
+      var container = document.querySelector('.container');
+      var themeToggle = document.getElementById('themeToggle');
+      function setTheme(t){ container.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+      var saved = localStorage.getItem('theme') || 'dark';
+      setTheme(saved);
+      themeToggle.addEventListener('click', function(){ var next = container.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; setTheme(next); });
+
+      // Reveal animation on scroll
+      var observer = new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, {threshold:0.12});
+      document.querySelectorAll('.project').forEach(function(el){ observer.observe(el); });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); var id = a.getAttribute('href'); if(id === '#') return; document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'}); }); });
+    })();
+  </script>
+</body>
+</html>
